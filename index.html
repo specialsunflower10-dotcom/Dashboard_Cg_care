@@ -84,32 +84,7 @@
             <div class="mb-8 flex flex-col md:flex-row md:items-center justify-between">
                 <div>
                     <h1 class="text-2xl md:text-4xl font-extrabold text-gray-800 tracking-tight">Dashboard ภาพรวม 📊</h1>
-                    <p class="text-sm md:text-base text-gray-500 mt-2">ติดตามผลการปฏิบัติงาน Care Giver แบบเรียลไทม์</p>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mb-10">
-                <div class="bg-gradient-to-br from-white to-blue-50/50 rounded-3xl shadow-sm hover:shadow-md border border-blue-100 p-6 transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-semibold text-blue-600 mb-1">จำนวนผู้ป่วย</p>
-                            <h3 class="text-4xl font-black text-gray-800">0 <span class="text-base font-medium text-gray-500">ราย</span></h3>
-                        </div>
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-200">
-                            <i class="fas fa-user-injured text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-br from-white to-purple-50/50 rounded-3xl shadow-sm hover:shadow-md border border-purple-100 p-6 transition-all duration-300 transform hover:-translate-y-1">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <p class="text-sm font-semibold text-purple-600 mb-1">บันทึกงานทั้งหมด</p>
-                            <h3 class="text-4xl font-black text-gray-800">0 <span class="text-base font-medium text-gray-500">ครั้ง</span></h3>
-                        </div>
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-purple-200">
-                            <i class="fas fa-clipboard-check text-2xl"></i>
-                        </div>
-                    </div>
+                    <p class="text-sm md:text-base text-gray-500 mt-2">ยินดีต้อนรับสู่ระบบบันทึกผลการปฏิบัติงาน Care Giver</p>
                 </div>
             </div>
 
@@ -187,11 +162,30 @@
                         <div class="mt-2 mb-5">
                             <label class="block text-sm font-bold text-gray-800 mb-2">ข้อมูลผู้ป่วยที่ไปดูแล 🧑‍🦳</label>
                             <div class="bg-white p-4 rounded-xl border border-blue-100 shadow-sm">
-                                <div class="mb-3">
-                                    <label class="block text-xs font-bold text-gray-600 mb-1">ชื่อ-สกุล ผู้ป่วย</label>
-                                    <input type="text" id="patientName" placeholder="ระบุชื่อ-สกุล ผู้ป่วย" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-3 mb-3">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 mb-1">คำนำหน้า</label>
+                                        <select id="patientTitle" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
+                                            <option value="">เลือก</option>
+                                            <option value="นาย">นาย</option>
+                                            <option value="นาง">นาง</option>
+                                            <option value="น.ส.">น.ส.</option>
+                                            <option value="ด.ช.">ด.ช.</option>
+                                            <option value="ด.ญ.">ด.ญ.</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 mb-1">ชื่อผู้ป่วย</label>
+                                        <input type="text" id="patientFirstName" placeholder="ระบุชื่อ" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 mb-1">นามสกุล</label>
+                                        <input type="text" id="patientLastName" placeholder="ระบุนามสกุล" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
+                                    </div>
                                 </div>
-                                <div class="grid grid-cols-3 gap-3">
+
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                                     <div>
                                         <label class="block text-xs font-bold text-gray-600 mb-1">บ้านเลขที่</label>
                                         <input type="text" id="houseNumber" placeholder="เช่น 123/4" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
@@ -203,12 +197,14 @@
                                     <div>
                                         <label class="block text-xs font-bold text-gray-600 mb-1">ตำบล</label>
                                         <select id="subDistrict" required class="w-full rounded-lg border-blue-200 bg-blue-50/30 focus:bg-blue-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 p-2.5 outline-none transition-colors text-blue-900">
+                                            <option value="">-- เลือกตำบล --</option>
                                             <option value="บ้านจีต">ตำบลบ้านจีต</option>
                                             <option value="โนนทองอินทร์">ตำบลโนนทองอินทร์</option>
                                             <option value="คอนสาย">ตำบลคอนสาย</option>
                                         </select>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -435,7 +431,6 @@
     </div>
 
     <script>
-        // --- 1. ตั้งค่าการเริ่มต้นและฟังก์ชันทั่วไป ---
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
@@ -456,14 +451,12 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // ตั้งค่าปี พ.ศ. ปัจจุบันอัตโนมัติ เพื่อความสะดวกในการใช้งาน
             const currentYear = new Date().getFullYear();
             const thaiYear = currentYear > 2500 ? currentYear : currentYear + 543;
             document.getElementById('year').value = thaiYear;
             document.getElementById('filterYear').value = thaiYear;
             document.getElementById('summaryYear').value = thaiYear;
 
-            // ตั้งค่าเดือนปัจจุบันในหน้าบันทึก
             const thaiMonths = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
             const currentMonthStr = thaiMonths[new Date().getMonth()];
             document.getElementById('month').value = currentMonthStr;
@@ -471,7 +464,6 @@
             switchTab('dashboard');
         });
 
-        // ฟังก์ชันศูนย์กลางสำหรับแปลงวันที่ ป้องกัน Timezone บั๊ก 100%
         function formatThaiDate(dateStr) {
             if (!dateStr || dateStr === "-") return "-";
             try {
@@ -495,7 +487,6 @@
             }
         }
 
-        // --- 2. การดึงข้อมูลและ Dashboard ---
         const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxqxnA0EKxtJvf3aEVuAnLtGEKFRmkrnrrZfpOLp6hyEo89mdNWEmsXobqxluo3OSVW6w/exec"; 
         let globalRecords = [];
 
@@ -512,7 +503,6 @@
                         return r;
                     });
                     previewReport();
-                    updateDashboardStats();
                     updateSummaryTable();
                 } else {
                     tbody.innerHTML = '<tr><td colspan="4" class="text-center py-6 text-red-500 font-bold"><i class="fas fa-exclamation-circle mr-2"></i> ข้อผิดพลาด: ' + result.message + '</td></tr>';
@@ -521,13 +511,6 @@
             .catch(err => {
                 tbody.innerHTML = '<tr><td colspan="4" class="text-center py-10 text-red-600 bg-red-50 rounded-xl"><i class="fas fa-wifi text-3xl mb-2"></i><br><b>ไม่สามารถเชื่อมต่อฐานข้อมูลได้</b><br><span class="text-sm">โปรดตรวจสอบสัญญาณอินเทอร์เน็ตของคุณ</span></td></tr>';
             });
-        }
-
-        function updateDashboardStats() {
-            const totalReports = globalRecords.length;
-            const uniquePatients = new Set(globalRecords.map(r => r.patientName).filter(n => n)).size;
-            document.querySelector('#dashboard .bg-gradient-to-br.from-white.to-blue-50\\/50').querySelector('h3').innerHTML = `${uniquePatients} <span class="text-base font-medium text-gray-500">ราย</span>`;
-            document.querySelector('#dashboard .bg-gradient-to-br.from-white.to-purple-50\\/50').querySelector('h3').innerHTML = `${totalReports} <span class="text-base font-medium text-gray-500">ครั้ง</span>`;
         }
 
         function parseTimeToMinutes(str) {
@@ -587,11 +570,9 @@
                 const mins = Math.round(totalMins % 60);
                 const actualDisplay = mins > 0 ? `${hrs} ชม. ${mins} นาที` : `${hrs} ชม.`;
                 
-                // คำนวณเวลาที่เหลือ (160 ชม. ลบด้วย เวลาที่ทำได้จริง)
                 const targetMins = 160 * 60;
                 const remainingMins = targetMins - totalMins;
                 
-                // บังคับแสดงผลเป้าหมายชั่วโมงรวมเป็น 160 ชม. สำหรับทุกคน
                 const timeDisplay = "160 ชม.";
                 
                 let statusHtml = '';
@@ -617,12 +598,10 @@
             });
         }
 
-        // --- 3. การบันทึกข้อมูล (เพิ่มระบบป้องกันส่งข้อมูลซ้ำ) ---
         document.getElementById('cgForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitBtn = document.getElementById('submitBtn');
             
-            // ล็อกปุ่มทันทีเพื่อป้องกันการกดเบิ้ล (Double Submit Prevention)
             if (submitBtn.disabled) return; 
             
             const originalBtnText = submitBtn.innerHTML;
@@ -637,8 +616,10 @@
                 thDate = `${parts[2]}/${parts[1]}/${parseInt(parts[0]) + 543}`;
             }
 
-            // ตัดช่องว่างส่วนเกินที่หัวท้าย (Sanitize Input)
-            const pName = document.getElementById('patientName').value.trim();
+            const pTitle = document.getElementById('patientTitle').value.trim();
+            const pFirstName = document.getElementById('patientFirstName').value.trim();
+            const pLastName = document.getElementById('patientLastName').value.trim();
+            const pName = `${pTitle}${pFirstName} ${pLastName}`;
             const hNo = document.getElementById('houseNumber').value.trim();
             const vNo = document.getElementById('villageNo').value.trim();
             const sDist = document.getElementById('subDistrict').value.trim();
@@ -671,8 +652,10 @@
                 if(data.status === 'success') {
                     showAlert('<i class="fas fa-check-circle text-2xl mb-1 block text-green-500"></i> บันทึกข้อมูลสำเร็จ!', 'success');
                     
-                    // ล้างข้อมูลเฉพาะบางฟิลด์ที่จำเป็น (เก็บชื่อ CG กับเดือนไว้ให้กรอกต่อง่ายๆ)
-                    document.getElementById('patientName').value = '';
+                    document.getElementById('subDistrict').value = '';
+                    document.getElementById('patientTitle').value = '';
+                    document.getElementById('patientFirstName').value = '';
+                    document.getElementById('patientLastName').value = '';
                     document.getElementById('houseNumber').value = '';
                     document.getElementById('villageNo').value = '';
                     document.getElementById('date').value = '';
@@ -690,7 +673,6 @@
                 showAlert('ระบบขัดข้อง โปรดตรวจสอบอินเทอร์เน็ตแล้วลองส่งใหม่', 'error');
             })
             .finally(() => {
-                // ปลดล็อกปุ่มให้กลับมาใช้งานได้อีกครั้ง
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
@@ -713,7 +695,6 @@
 
         function clearActivity() { document.getElementById('activity').value = ''; }
 
-        // --- 4. การจัดการ PDF ---
         function previewReport() {
             const month = document.getElementById('filterMonth').value;
             const year = document.getElementById('filterYear').value;
@@ -793,7 +774,6 @@
 
             const currentUrl = window.location.href;
             
-            // ปรับปรุง Print CSS (page-break-inside) ให้ตารางไม่ขาดตอนเวลาข้ามหน้า
             const printHtml = `
             <!DOCTYPE html>
             <html lang="th">
